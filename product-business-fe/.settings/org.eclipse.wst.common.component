@@ -7,6 +7,12 @@
         <dependent-module archiveName="product-business-trade-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/product-business-trade-api/product-business-trade-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="support-signaturn-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/support-signature-api/support-signature-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="product-business-order-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/product-business-order-api/product-business-order-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <property name="java-output-path" value="/product-business-fe/target/classes"/>
         <property name="context-root" value="fe"/>
     </wb-module>
