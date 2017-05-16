@@ -48,7 +48,7 @@ public class ConcentrateController {
 		}
 	}
 	
-	@RequestMapping(value = "/pay", method = RequestMethod.POST)
+	@RequestMapping(value = "/pay1", method = RequestMethod.POST)
 	@ResponseBody
 	public JSONObject realtimePayment(String data){
 		try {

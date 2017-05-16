@@ -15,13 +15,16 @@
 
 <!-- 	<dubbo:reference id="realtimeCollectionService" interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" version="1.0"/> -->
 	<!-- 集中代收付 - 时实代收 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" id="realtimeCollectionService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" id="realtimeCollectionService" version="1.0" check="false" />
 	<!-- 集中代收付 - 时实代付 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimePayment" id="realtimePaymentService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimePayment" id="realtimePaymentService" version="1.0" check="false" />
 	
 	<!-- 集中代收付 - 批量代收 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchCollection" id="batchCollectionService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchCollection" id="batchCollectionService" version="1.0" check="false" />
 	<!-- 集中代收付 - 批量代付-->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchPayment" id="batchPaymentService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchPayment" id="batchPaymentService" version="1.0" check="false" />
 
+
+	<dubbo:reference id="messageDecodeService" interface="com.zcbspay.platform.support.signaturn.service.MessageDecodeService" check="false" version="1.0"/>
+	<dubbo:reference id="messageEncryptService" interface="com.zcbspay.platform.support.signaturn.service.MessageEncryptService" check="false" version="1.0"/>
 </beans>
