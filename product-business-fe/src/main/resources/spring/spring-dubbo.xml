@@ -1,10 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-	xmlns:dubbo="http://code.alibabatech.com/schema/dubbo"
-	xmlns:context="http://www.springframework.org/schema/context"
-	xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:dubbo="http://code.alibabatech.com/schema/dubbo" xmlns:context="http://www.springframework.org/schema/context" xmlns:aop="http://www.springframework.org/schema/aop" xsi:schemaLocation="
 	http://www.springframework.org/schema/beans 
 	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd 
 	http://www.springframework.org/schema/context 
@@ -13,15 +8,17 @@
 	http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.1.xsd">
 
 
-<!-- 	<dubbo:reference id="realtimeCollectionService" interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" version="1.0"/> -->
 	<!-- 集中代收付 - 时实代收 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" id="realtimeCollectionService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimeCollection" id="realtimeCollectionService" version="1.0" check="false"/>
 	<!-- 集中代收付 - 时实代付 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimePayment" id="realtimePaymentService" version="1.0"/>
-	
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.realtime.service.RealtimePayment" id="realtimePaymentService" version="1.0" check="false"/>
+
 	<!-- 集中代收付 - 批量代收 -->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchCollection" id="batchCollectionService" version="1.0"/>
-	<!-- 集中代收付 - 批量代付-->
-	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchPayment" id="batchPaymentService" version="1.0"/>
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchCollection" id="batchCollectionService" version="1.0" check="false"/>
+	<!-- 集中代收付 - 批量代付 -->
+	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchPayment" id="batchPaymentService" version="1.0" check="false"/>
+
+	<!-- 查询订单 -->
+	<dubbo:reference interface="com.zcbspay.platform.business.order.service.OrderQueryService" id="orderQueryService" version="1.0" check="false"/>
 
 </beans>

@@ -10,7 +10,7 @@
  */
 package com.zcbspay.platform.business.fe.bean;
 
-import net.sf.cglib.beans.BeanCopier;
+import org.springframework.cglib.beans.BeanCopier;
 
 public class BeanCopyUtil  {
 

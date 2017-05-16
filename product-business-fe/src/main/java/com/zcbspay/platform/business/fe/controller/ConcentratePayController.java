@@ -68,9 +68,9 @@ public class ConcentratePayController {
 	}
 
 	@SuppressWarnings("rawtypes")
-	@RequestMapping(value = "/BatchCollection", method = RequestMethod.POST)
+	@RequestMapping(value = "/batchCollection", method = RequestMethod.POST)
 	@ResponseBody
-	public ResultBean BatchCollection(String data) {
+	public ResultBean batchCollection(String data) {
 		try {
 			Map<String, Class> map = new HashMap<>();
 			map.put("fileContent", FileContentBean.class);
@@ -85,9 +85,9 @@ public class ConcentratePayController {
 	}
 
 	@SuppressWarnings("rawtypes")
-	@RequestMapping(value = "/BatchPayment", method = RequestMethod.POST)
+	@RequestMapping(value = "/batchPayment", method = RequestMethod.POST)
 	@ResponseBody
-	public ResultBean BatchPayment(String data) {
+	public ResultBean batchPayment(String data) {
 		try {
 			Map<String, Class> map = new HashMap<>();
 			map.put("fileContent", FileContentBean.class);
