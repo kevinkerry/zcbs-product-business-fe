@@ -18,6 +18,8 @@
 	<dubbo:reference interface="com.zcbspay.platform.business.concentrate.batch.service.BatchPayment" id="batchPaymentService" version="1.0" check="false" />
 	<!-- 查询订单 -->
 	<dubbo:reference interface="com.zcbspay.platform.business.order.service.OrderQueryService" id="orderQueryService" version="1.0" check="false"/>
+	<!-- 合同业务 -->
+	<dubbo:reference interface="com.zcbspay.platform.business.merch.service.ContractBizService" id="contractBizService" version="1.0" check="false"/>
 
 
 	<dubbo:reference id="messageDecodeService" interface="com.zcbspay.platform.support.signaturn.service.MessageDecodeService" check="false" version="1.0"/>
