@@ -11,12 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 
-import com.zcbspay.platform.business.concentrate.bean.BatchPaymentBean;
-import com.zcbspay.platform.business.concentrate.bean.FileContentBean;
-import com.zcbspay.platform.business.concentrate.bean.RealtimeCollectionBean;
 import com.zcbspay.platform.business.fe.bean.BeanCopyUtil;
 import com.zcbspay.platform.business.fe.bean.ResultBean;
-import com.zcbspay.platform.business.fe.utils.JSONUtils;
 import com.zcbspay.platform.business.merch.bean.BatchImportFileContent;
 import com.zcbspay.platform.business.merch.bean.BatchImportReqBean;
 import com.zcbspay.platform.business.merch.service.ContractBizService;
