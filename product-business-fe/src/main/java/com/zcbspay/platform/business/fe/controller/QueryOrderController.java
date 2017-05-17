@@ -20,7 +20,7 @@ public class QueryOrderController {
 	@Autowired
 	private OrderQueryService orderQueryService;
 	
-	@RequestMapping(value = "/queryOrder", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryOrder", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryOrder(String merchNo, String orderId){
 		try {
@@ -32,7 +32,7 @@ public class QueryOrderController {
 		}
 	}
 	
-	@RequestMapping(value = "/queryOrderByTN", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryOrderByTN", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryOrderByTN(String tn){
 		try {
@@ -43,7 +43,7 @@ public class QueryOrderController {
 			return new ResultBean("PC013", "订单服务异常!");
 		}
 	}
-	@RequestMapping(value = "/queryConcentrateCollectionOrder", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryConcentrateCollectionOrder", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryConcentrateCollectionOrder(String tn){
 		try {
@@ -54,7 +54,7 @@ public class QueryOrderController {
 			return new ResultBean("PC013", "订单服务异常!");
 		}
 	}
-	@RequestMapping(value = "/queryConcentratePaymentOrder", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryConcentratePaymentOrder", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryConcentratePaymentOrder(String tn){
 		try {
@@ -65,7 +65,7 @@ public class QueryOrderController {
 			return new ResultBean("PC013", "订单服务异常!");
 		}
 	}
-	@RequestMapping(value = "/queryConcentrateCollectionBatch", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryConcentrateCollectionBatch", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryConcentrateCollectionBatch(String merchNo, String batchNo, String txnDate){
 		try {
@@ -76,7 +76,7 @@ public class QueryOrderController {
 			return new ResultBean("PC013", "订单服务异常!");
 		}
 	}
-	@RequestMapping(value = "/queryConcentratePaymentBatch", method = RequestMethod.POST)
+	@RequestMapping(value = "/queryConcentratePaymentBatch", method = RequestMethod.GET)
 	@ResponseBody
 	public ResultBean queryConcentratePaymentBatch(String merchNo, String batchNo, String txnDate){
 		try {
