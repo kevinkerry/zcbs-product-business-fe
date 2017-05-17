@@ -7,6 +7,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -28,9 +29,9 @@ public class ContractController {
 	@Autowired
 	private ContractBizService contractBizService;
 	
-	@RequestMapping(value = "/findByCode", method = RequestMethod.GET)
+	@RequestMapping(value = "/findByCode/{contractNum}", method = RequestMethod.GET)
 	@ResponseBody
-	public ResultBean findByCode(String contractNum) {
+	public ResultBean findByCode(@PathVariable("contractNum") String contractNum) {
 		try {
 			return BeanCopyUtil.copyBean(ResultBean.class, contractBizService.findByCode(contractNum));
 		} catch (Exception e) {
