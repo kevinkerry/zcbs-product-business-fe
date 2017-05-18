@@ -15,7 +15,12 @@ import com.zcbspay.platform.support.signaturn.service.MessageEncryptService;
 
 import net.sf.json.JSONObject;
 
-
+/**
+ * 验签加密
+ * @author: zhangshd
+ * @date:   2017年5月17日 下午1:51:31   
+ * @version :v1.0
+ */
 @Controller
 @RequestMapping("/sign")
 public class SignatureController {
