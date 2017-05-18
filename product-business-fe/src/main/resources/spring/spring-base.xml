@@ -16,7 +16,16 @@
 	<context:component-scan base-package="com.zcbspay.platform.business.fe">
 		<context:exclude-filter type="annotation" expression="org.springframework.stereotype.Controller" />
 	</context:component-scan>
-
+	<bean id="logHelper" class="com.zcbspay.platform.business.fe.utils.LogHelper"/>
+	<aop:config>
+	    <aop:aspect ref="logHelper">
+	        <aop:pointcut id="pointcut" expression="execution(* com.zcbspay.platform.business..*.*(..))"/>
+	        <aop:before method="before"  pointcut-ref="pointcut" />
+	        <aop:after method="after" pointcut-ref="pointcut" />
+	        <aop:around method="around"  pointcut-ref="pointcut" />
+	        <aop:after-throwing method="throwException" pointcut-ref="pointcut" throwing="ex" />
+	    </aop:aspect>
+	</aop:config>
 	<import resource="spring-dubbo.xml" />
 	<!-- <import resource="spring-session.xml"/> -->
 	<!-- <import resource="spring-job.xml"/> -->
