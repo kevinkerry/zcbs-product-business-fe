@@ -14,7 +14,12 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.zcbspay.platform.member.merchant.bean.MerchMK;
 import com.zcbspay.platform.member.merchant.service.MerchMKService;
 
-
+/**
+ * 商户
+ * @author: zhangshd
+ * @date:   2017年5月17日 下午1:51:42   
+ * @version :v1.0
+ */
 @Controller
 @RequestMapping("/merch")
 public class MerchMKController {
