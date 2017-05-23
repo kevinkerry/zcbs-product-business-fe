@@ -1,5 +1,6 @@
 package com.zcbspay.platform.business.fe.controller.portal;
 
+import java.io.File;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
@@ -68,5 +69,9 @@ public class LoginController {
 		UserBean user=(UserBean) JSONObject.toBean(JSONObject.fromObject(userBeanStr), UserBean.class);
 		Map<String, Object> returnmap = userService.login(user);
 		return returnmap;
+	}
+	public static void main(String[] args) {
+		File file =new File("D:\\tmp\\er\\mr\\");
+		System.out.println(file.mkdirs());
 	}
 }
