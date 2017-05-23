@@ -13,10 +13,12 @@ import com.zcbspay.platform.portal.system.service.UserService;
 
 import net.sf.json.JSONObject;
 
+
 @Controller
 @RequestMapping("/user")
 @SuppressWarnings("all")
 public class UserController {
+	private final String admin ="admin";
 	@Autowired
 	private UserService userService;
 	@ResponseBody
@@ -29,10 +31,16 @@ public class UserController {
 	@RequestMapping("/saveUser")
 	public Map<String, Object> saveUser(String userBeanStr) {
 		UserBean userBean=(UserBean) JSONObject.toBean(JSONObject.fromObject(userBeanStr),UserBean.class);
-		String message = userService.saveUser(userBean);
-		Map<String, Object> re = new HashMap<>();
-		re.put("info", message);
-		return re;
+		return userService.saveUser(userBean);
+	}
+	
+	@ResponseBody
+	@RequestMapping("/register")
+	public Map<String, Object> register(String userBeanStr) {
+		UserBean userBean=(UserBean) JSONObject.toBean(JSONObject.fromObject(userBeanStr),UserBean.class);
+		userBean.setLoginName(admin);
+		userBean.setCreator("1");
+		return userService.saveUser(userBean);
 	}
 
 	@ResponseBody
