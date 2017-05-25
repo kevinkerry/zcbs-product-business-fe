@@ -42,14 +42,13 @@ public class EMailController {
 	}
 	@RequestMapping(value = "/sendMailByTemplate", method = RequestMethod.POST)
 	@ResponseBody
-	public ResultBean sendMailByTemplate(String receiver){
+	public ResultBean sendMailByTemplate(String receiver, String subject, String maiBody){
 		
 		try {
-			String templateName = "template_1.ftl";
+			String templateName = "template_2.ftl";
 			Map<String, String> map = new HashMap<String, String>();
-			map.put("content", "test");
-			com.zcbspay.platform.portal.email.bean.ResultBean result = mailService.sendMailByTemplate(receiver, "test", map, templateName);
-			System.out.println(result.toString());			
+			map.put("content", maiBody);
+			com.zcbspay.platform.portal.email.bean.ResultBean result = mailService.sendMailByTemplate(receiver, subject, map, templateName);
 			if (result.isResultBool()) {
 				return new ResultBean("邮件发送成功！");
 			}else {
