@@ -21,12 +21,15 @@
 	<!-- 合同业务 -->
 	<dubbo:reference interface="com.zcbspay.platform.business.merch.service.ContractBizService" id="contractBizService" version="1.0" check="false"/>
 
-
+	<!-- 解密 -->
 	<dubbo:reference id="messageDecodeService" interface="com.zcbspay.platform.support.signaturn.service.MessageDecodeService" check="false" version="1.0"/>
+	<!-- 加密 -->
 	<dubbo:reference id="messageEncryptService" interface="com.zcbspay.platform.support.signaturn.service.MessageEncryptService" check="false" version="1.0"/>
+	<!-- 商户 -->
 	<dubbo:reference id="merchMKService" interface="com.zcbspay.platform.member.merchant.service.MerchMKService" check="false" version="1.0"/>
 	
-	<!-- 门户 -->
+	<!-- 门户 用户-->
 	<dubbo:reference id="userService" interface="com.zcbspay.platform.portal.system.service.UserService" check="false" version="1.0"/>
+	<!-- 门户查询与分析 -->
 	<dubbo:reference id="queryAndStatService" interface="com.zcbspay.platform.portal.query.statistics.service.QueryAndStatService" check="false"  version="1.0"/>
 </beans>

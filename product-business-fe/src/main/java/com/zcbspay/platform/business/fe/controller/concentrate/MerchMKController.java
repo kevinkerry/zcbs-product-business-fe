@@ -40,6 +40,8 @@ public class MerchMKController {
 		Map<String, Object> re=new HashMap<>();
 		re.put("localpub", merchMk.getLocalPubKey());
 		re.put("localpri", merchMk.getLocalPriKey());
+		re.put("memberpub", merchMk.getMemberPubKey());
+		re.put("memberpri", merchMk.getMemberPriKey());
 	    return re;
 	}
 }

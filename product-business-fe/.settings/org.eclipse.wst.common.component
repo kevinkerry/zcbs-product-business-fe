@@ -13,6 +13,15 @@
         <dependent-module archiveName="product-business-order-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/product-business-order-api/product-business-order-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="zplatform-acc-bean-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-acc-bean/zplatform-acc-bean">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zplatform-member-commons-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-member-commons/zplatform-member-commons">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
+        <dependent-module archiveName="zplatform-member-commons-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/zplatform-member-commons-api/zplatform-member-commons-api">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
         <dependent-module archiveName="product-business-merch-api-1.0.0-SNAPSHOT.jar" deploy-path="/WEB-INF/lib" handle="module:/resource/product-business-merch-api/product-business-merch-api">
             <dependency-type>uses</dependency-type>
         </dependent-module>
