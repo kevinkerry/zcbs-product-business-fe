@@ -53,7 +53,6 @@ public class SignatureController {
 	 * @date: 2017年5月16日 下午3:01:25 
 	 * @version v1.0
 	 */
-	@SuppressWarnings("unchecked")
 	@RequestMapping(value = "/encrypt", method = RequestMethod.POST)
 	@ResponseBody
 	public MessageBean realtimePayment(String enData,String additBean){
