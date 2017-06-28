@@ -32,5 +32,7 @@
 	<dubbo:reference id="userService" interface="com.zcbspay.platform.portal.system.service.UserService" check="false" version="1.0"/>
 	<!-- 门户查询与分析 -->
 	<dubbo:reference id="queryAndStatService" interface="com.zcbspay.platform.portal.query.statistics.service.QueryAndStatService" check="false"  version="1.0"/>
+	<!-- 邮件服务 -->
 	<dubbo:reference id="mailService" interface="com.zcbspay.platform.portal.email.service.MailService" check="false" version="1.0"/>
+	<dubbo:reference id="ftpService" interface="com.zcbspay.platform.manager.merchant.service.FtpService" check="false" version="1.0"/>
 </beans>
