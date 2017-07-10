@@ -11,7 +11,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 		<!-- 编译时的编码 -->
 		<maven.compiler.encoding>UTF-8</maven.compiler.encoding>
-		<project.nexus>http://192.168.2.48:8081</project.nexus>
+		<project.nexus>http://192.168.2.2:8081</project.nexus>
 		<project.remoteArtifactRepositories>${project.nexus}/nexus/content/groups/public</project.remoteArtifactRepositories>
 		<spring.version>4.2.0.RELEASE</spring.version>
 		<junit.version>4.12</junit.version>
@@ -253,20 +253,20 @@
 			<version>0.1</version>
 		</dependency>
 		<!--end dubbo -->
-		
+
 		<!-- 关联 -->
 		<dependency>
 			<groupId>com.paytong.platform.business</groupId>
 			<artifactId>product-business-trade-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
-  		<dependency>
+		<dependency>
 			<groupId>com.zcbspay.platform</groupId>
 			<artifactId>support-signaturn-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
-			<groupId>com.paytong.platform.business</groupId> 
+			<groupId>com.paytong.platform.business</groupId>
 			<artifactId>product-business-order-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
@@ -287,17 +287,17 @@
 		</dependency>
 		<dependency>
 			<groupId>com.zcbspay.platform</groupId>
-			<artifactId>portal-system-api</artifactId> 
+			<artifactId>portal-system-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.zcbspay.platform</groupId>
-			<artifactId>portal-query-statistics-api</artifactId> 
+			<artifactId>portal-query-statistics-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 		<dependency>
 			<groupId>com.zcbspay.platform</groupId>
-			<artifactId>portal-email-api</artifactId> 
+			<artifactId>portal-email-api</artifactId>
 			<version>1.0.0-SNAPSHOT</version>
 		</dependency>
 	</dependencies>
@@ -305,15 +305,7 @@
 	<build>
 		<finalName>fe</finalName>
 		<resources>
-			<!-- <resource>
-				<targetPath>${project.build.directory}/classes</targetPath>
-				<directory>src/main/resources</directory>
-				<filtering>true</filtering>
-				<includes>
-					<include>**/*.xml</include>
-					<include>**/*.properties</include>
-				</includes>
-			</resource> -->
+			<!-- <resource> <targetPath>${project.build.directory}/classes</targetPath> <directory>src/main/resources</directory> <filtering>true</filtering> <includes> <include>**/*.xml</include> <include>**/*.properties</include> </includes> </resource> -->
 			<resource>
 				<directory>src/main/resources</directory>
 				<filtering>true</filtering>
@@ -355,25 +347,25 @@
 				</configuration>
 			</plugin>
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-war-plugin</artifactId>
-                <configuration>
-                    <archive>
-                        <addMavenDescriptor>false</addMavenDescriptor>
-                    </archive>
-                    <webResources>
-                        <resource>
-                            <directory>src/main/resources/${package.environment}</directory>
-                            <targetPath>WEB-INF/classes</targetPath>
-                            <filtering>true</filtering>
-                            <includes>
-                            	<include>**/*.properties</include>
-                                <include>**/*.jar</include>
-                            </includes>
-                        </resource>
-                    </webResources>
-                </configuration>
-            </plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-war-plugin</artifactId>
+				<configuration>
+					<archive>
+						<addMavenDescriptor>false</addMavenDescriptor>
+					</archive>
+					<webResources>
+						<resource>
+							<directory>src/main/resources/${package.environment}</directory>
+							<targetPath>WEB-INF/classes</targetPath>
+							<filtering>true</filtering>
+							<includes>
+								<include>**/*.properties</include>
+								<include>**/*.jar</include>
+							</includes>
+						</resource>
+					</webResources>
+				</configuration>
+			</plugin>
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -461,4 +453,30 @@
 			</snapshots>
 		</repository>
 	</repositories>
+
+	<pluginRepositories>
+		<pluginRepository>
+			<id>nexus</id>
+			<name>Nexus</name>
+			<url>${project.nexus}/nexus/content/groups/public</url>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</pluginRepository>
+	</pluginRepositories>
+	<distributionManagement>
+		<repository>
+			<id>zplatform-Releases</id>
+			<name>Nexus Release</name>
+			<url>${project.nexus}/nexus/content/repositories/releases</url>
+		</repository>
+		<snapshotRepository>
+			<id>zplatform-Snapshots</id>
+			<name>Nexus Snapshots</name>
+			<url>${project.nexus}/nexus/content/repositories/snapshots</url>
+		</snapshotRepository>
+	</distributionManagement>
 </project>
