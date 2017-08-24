@@ -35,4 +35,5 @@
 	<!-- 邮件服务 -->
 	<dubbo:reference id="mailService" interface="com.zcbspay.platform.portal.email.service.MailService" check="false" version="1.0"/>
 	<dubbo:reference id="ftpService" interface="com.zcbspay.platform.manager.merchant.service.FtpService" check="false" version="1.0"/>
+	<dubbo:reference id="fileService" interface="com.zcbspay.platform.portal.system.service.FileService" check="false" version="1.0"/>
 </beans>
